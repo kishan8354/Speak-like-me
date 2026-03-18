@@ -1,134 +1,173 @@
-# 🗣️ AI Voice Cloner (XTTS v2)
+# 🗣️ Multilingual Speech-to-Speech Translation with Speaker Identity and Emotion Preservation
 
-A **Streamlit web app** for cloning voices using [Coqui TTS](https://github.com/coqui-ai/TTS).  
-Upload or record reference voices, fine-tune style & settings, and generate natural-sounding speech in 16+ languages — all through a clean, dark-themed interface.
+A **Streamlit-based AI system** for multilingual speech translation that preserves **speaker identity and emotional expression** using **Coqui XTTS v2**.
+
+This system enables users to upload or record a reference voice and generate natural-sounding speech in multiple languages while maintaining:
+
+- 🎙️ Voice identity  
+- 🎭 Emotional tone  
+- 🌍 Cross-lingual consistency  
+
+Designed as part of an advanced research project in AI-driven speech synthesis and expressive voice conversion.
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
-- 📁 **Voice gallery management**
-  - Upload, record, save, activate, and delete reference voices
-  - Batch delete multiple voices at once
-  - Preview and switch between saved voices
-- 🌍 **Multi-language support**
-  - 16+ languages including English, Spanish, French, German, Chinese, Japanese, and more
-- 🎭 **Voice style controls**
-  - Choose between neutral, fast, and expressive styles
-  - Optional speed and emotion overrides (happy, sad, angry, surprised, fearful)
-- ⚙️ **Advanced settings**
-  - Control voice stability and similarity for better cloning accuracy
-  - Toggle loudness normalization for consistent output
-- 📊 **Generation history**
-  - Automatic metadata saving (text, style, reference voice, timestamp)
-  - Recent generations gallery with preview, download, and re-synthesize option
-- 💾 **Multiple export formats**
-  - Download results as WAV or MP3 (requires FFmpeg)
-- 🎨 **Modern dark UI**
-  - Custom-styled Streamlit interface with smooth UX and mobile-friendly layout
+### 🎙️ Speaker Identity Preservation
+- High speaker similarity using cosine embedding matching
+- Adjustable similarity & stability controls
+- Voice cloning with reference-based synthesis
+
+### 🌍 Multilingual Speech Translation
+- Supports 16+ languages  
+- Cross-lingual voice transfer  
+- Natural pronunciation in target language  
+
+### 🎭 Emotion-Aware Synthesis
+- Emotion controls: happy, sad, angry, surprised, fearful
+- Prosody transfer for expressive speech
+- Emotion confidence tracking
+
+### 🎛 Advanced Controls
+- Voice stability tuning
+- Similarity boost option
+- Loudness normalization
+- Speed and expressive mode selection
+
+### 📊 Evaluation Metrics
+- Speaker Similarity (Cosine)
+- Signal-to-Noise Ratio (SNR)
+- Spectral Clarity
+- Emotion Transfer Accuracy
+
+### 🗂 Voice Management System
+- Upload, record, activate, delete voices
+- Batch delete option
+- Preview reference voices
+- Generation history tracking
+
+### 💾 Export Options
+- WAV output
+- MP3 export (requires FFmpeg)
 
 ---
 
 ## 🛠 Tech Stack
 
-### **Frontend / UI**
+### Frontend
+- **Streamlit** – Interactive web UI  
+- streamlit-option-menu – Sidebar navigation  
+- Custom CSS (Dark Theme)  
+- HTML5 MediaRecorder API  
 
-- [Streamlit](https://streamlit.io/): Web interface for interaction and real-time updates
-- **streamlit-option-menu**: Sidebar navigation with a clean UI
-- Custom CSS styling for dark mode & better UX
-- HTML5 `MediaRecorder` for in-browser recording
+### Backend
+- **Coqui TTS (XTTS v2)** – Core voice cloning engine  
+- librosa & soundfile – Audio processing  
+- pydub – Format conversion  
+- NumPy – Numerical processing  
 
-### **Backend / Logic**
-
-- [Coqui TTS (XTTS v2)](https://github.com/coqui-ai/TTS): Voice cloning & text-to-speech model
-- **pydub**: Audio file conversion (WebM/MP3 ↔ WAV)
-- **librosa & soundfile**: Audio signal processing
-- **NumPy**: Array and numerical operations
-
-### **Utilities**
-
-- **ffmpeg (system dependency)**: Required for audio encoding/decoding
-- **streamlit.components.v1** – custom recorder integration
+### System Dependencies
+- FFmpeg – Audio encoding/decoding  
 
 ---
 
 ## 📂 Project Structure
 
-```text
-voice_clone_app/
+```
+multilingual_speech_translation/
 │
-├── outputs/                  # Generated outputs (auto-created)
-│   └── xtts_*.wav            # Generated files
-│
-├── voices/                   # Reference voices (auto-created)
-│   ├── ref_*.wav             # Uploaded/recorded samples
+├── outputs/                  # Generated speech outputs
+├── voices/                   # Reference voices
 │
 ├── app.py                    # Main Streamlit application
-├── run_app.py                # Launcher (cross-platform, auto-opens browser)
-├── requirements.txt          # Python dependencies
-├── LICENSE                   # Open-source license
-├── .gitignore                # Ignored files/folders
-└── README.md                 # Project documentation
+├── run_app.py                # Cross-platform launcher
+├── requirements.txt
+├── LICENSE
+├── .gitignore
+└── README.md
 ```
 
 ---
 
 ## ⚙️ Installation
 
-### **1. Clone the Repository**
+### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/EbrahimAR/AI-Voice-Cloner-XTTS-v2.git
-cd AI-Voice-Cloner-XTTS-v2
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
 ```
 
-### **2. Create virtual environment**
+### 2️⃣ Create Virtual Environment
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate    # On Linux/Mac
-.venv\Scripts\activate       # On Windows
+source .venv/bin/activate    # Linux / Mac
+.venv\Scripts\activate       # Windows
 ```
 
-### **3. Install dependencies**
+### 3️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### **4. Install system dependencies**
+### 4️⃣ Install FFmpeg
 
-- **ffmpeg** is required for MP3 conversion:
-  - Windows: `choco install ffmpeg`
-  - macOS: `brew install ffmpeg`
-  - Linux: `sudo apt-get install ffmpeg`
+Linux:
+```bash
+sudo apt-get install ffmpeg
+```
+
+Mac:
+```bash
+brew install ffmpeg
+```
+
+Windows:
+```bash
+choco install ffmpeg
+```
 
 ---
 
-## ▶️ Run the app
+## ▶️ Run the Application
 
 ```bash
 streamlit run app.py
 ```
 
-Or use the helper script:
+App runs at:
 
-```bash
-python run_app.py
+```
+http://localhost:8502
 ```
 
-App will open at: http://localhost:8502
+---
+
+## 📊 Research Contribution
+
+This project explores:
+
+- Cross-lingual voice identity preservation
+- Emotion-aware speech synthesis
+- Prosody transfer in multilingual settings
+- Post-processing for perceptual enhancement
 
 ---
 
 ## 👨‍💻 Author
 
-Ebrahim Abdul Raoof
+**Kishan Kushavaha**  
+M.Tech – Computer Science  
+Specialization: AI & Speech Systems  
 
-[LinkedIn](https://www.linkedin.com/in/ebrahim-ar/) | [GitHub](https://github.com/EbrahimAR)
+GitHub: https://github.com/your-username  
+LinkedIn: https://linkedin.com/in/your-profile  
 
 ---
 
 ## 📜 License
 
-This project is licensed under the MIT License. See [LICENSE](https://github.com/EbrahimAR/AI-Voice-Cloner-XTTS-v2/blob/main/LICENSE) for details.
+This project is licensed under the MIT License.
