@@ -1,4 +1,4 @@
-# 🗣️ Multilingual Speech-to-Speech Translation with Speaker Identity and Emotion Preservation
+# 🗣️ Speak like Me
 
 A **Streamlit-based AI system** for multilingual speech translation that preserves **speaker identity and emotional expression** using **Coqui XTTS v2**.
 
