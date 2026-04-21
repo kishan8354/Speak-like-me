@@ -32,7 +32,7 @@
 
 ## 🧠 Overview
 
-SpeechForge v3.5 is a research-grade, production-ready TTS system that grafts **four trainable neural prosody modules** onto a frozen XTTSv2 backbone. The architecture preserves XTTSv2's strong voice cloning capability while adding expressive prosody control, timbre transfer via FreeVC, and a multi-stage self-supervised training curriculum.
+ Speak Like Me is a research-grade, production-ready TTS system that grafts **four trainable neural prosody modules** onto a frozen XTTSv2 backbone. The architecture preserves XTTSv2's strong voice cloning capability while adding expressive prosody control, timbre transfer via FreeVC, and a multi-stage self-supervised training curriculum.
 
 **Key capabilities:**
 
@@ -112,7 +112,7 @@ Applies Adaptive Instance Normalisation to transfer prosodic style characteristi
 | **Stage 2** | + F0InjectionLayer | F0 contour matching |
 | **Stage 3** | + AdaINStyleLayer | Full style transfer (end-to-end) |
 
-Training datasets: **LJSpeech-1.1**, **RAVDESS**, **LibriTTS train-clean-360**  
+Training datasets:**RAVDESS**, **LibriTTS train-clean-360**  
 Optimiser: AdamW + OneCycleLR · Mixed precision via AMP GradScaler
 
 ---
@@ -203,8 +203,8 @@ Dataset: **RAVDESS** + **CREMA-D** (speaker-disjoint split)
 ### 1. Clone & install
 
 ```bash
-git clone https://github.com/your-username/speechforge-v3.5.git
-cd speechforge-v3.5
+git clone https://github.com/kishan8354/Speak-like-me
+cd  Speak Like Me
 
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install TTS openai-whisper streamlit pydub librosa soundfile noisereduce resemblyzer
@@ -272,7 +272,7 @@ Run any of the three evaluation modules from the **Results & Metrics** tab. Each
 ## 📁 Project Structure
 
 ```
-speechforge-v3.5/
+Speak Like Me/
 ├── app.py                          # Main Streamlit application
 ├── models/
 │   └── large-v3.pt                 # Whisper weights
