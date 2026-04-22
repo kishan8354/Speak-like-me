@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <strong>Advanced neural text-to-speech with voice cloning, prosody transfer, and automated research-grade evaluation.</strong><br/>
+  <strong>Advanced speech-to-speech with voice cloning, prosody transfer, and automated research-grade evaluation.</strong><br/>
   Built on a frozen XTTSv2 backbone with four trainable prosody conditioning modules, FreeVC timbre transfer, and a three-module evaluation suite covering translation quality, speaker similarity, and emotion preservation.
 </p>
 
