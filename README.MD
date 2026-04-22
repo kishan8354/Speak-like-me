@@ -32,7 +32,7 @@
 
 ## 🧠 Overview
 
- Speak Like Me is a research-grade, production-ready TTS system that grafts **four trainable neural prosody modules** onto a frozen XTTSv2 backbone. The architecture preserves XTTSv2's strong voice cloning capability while adding expressive prosody control, timbre transfer via FreeVC, and a multi-stage self-supervised training curriculum.
+ Speak Like Me is a research-grade, production-ready S2ST system that grafts **four trainable neural prosody modules** onto a frozen XTTSv2 backbone. The architecture preserves XTTSv2's strong voice cloning capability while adding expressive prosody control, timbre transfer via FreeVC, and a multi-stage self-supervised training curriculum.
 
 **Key capabilities:**
 
