@@ -70,9 +70,9 @@ These are the original speaker reference recordings used for voice cloning.
 
 | # | Sample | Description |
 |---|--------|-------------|
-| 1 | [🔊 Reference Sample 1](testaudio/refrence/sample_1.wav) | Speaker reference — clip 1 |
-| 2 | [🔊 Reference Sample 2](testaudio/refrence/sample_2.wav) | Speaker reference — clip 2 |
-| 3 | [🔊 Reference Sample 3](testaudio/refrence/sample_3.wav) | Speaker reference — clip 3 |
+| 1 | [🔊 Reference Sample 1](testaudio/refrence/1.wav) | Speaker reference — clip 1 |
+| 2 | [🔊 Reference Sample 2](testaudio/refrence/2.wav) | Speaker reference — clip 2 |
+| 3 | [🔊 Reference Sample 3](testaudio/refrence/3.wav) | Speaker reference — clip 3 |
 
 ### Translated Output Clips (`testaudio/translated/`)
 
@@ -80,9 +80,9 @@ These are the synthesised outputs after Hindi → English speech-to-speech trans
 
 | # | Sample | Description |
 |---|--------|-------------|
-| 1 | [🔊 Translated Sample 1](testaudio/translated/sample_1.wav) | S2ST output — clip 1 |
-| 2 | [🔊 Translated Sample 2](testaudio/translated/sample_2.wav) | S2ST output — clip 2 |
-| 3 | [🔊 Translated Sample 3](testaudio/translated/sample_3.wav) | S2ST output — clip 3 |
+| 1 | [🔊 Translated Sample 1](testaudio/translated/1.wav) | S2ST output — clip 1 |
+| 2 | [🔊 Translated Sample 2](testaudio/translated/2.wav) | S2ST output — clip 2 |
+| 3 | [🔊 Translated Sample 3](testaudio/translated/3.wav) | S2ST output — clip 3 |
 
 > **Note:** Replace the filenames above with the actual filenames present in each folder. GitHub renders raw `.wav` and `.mp3` files natively — users can click and play without downloading.
 
