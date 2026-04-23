@@ -15,9 +15,24 @@
 
 ---
 
+## 👥 Authors & Affiliations
+
+> *This work was not supported by any organization.*
+
+| # | Author | Role | Affiliation | Contact |
+|---|--------|------|-------------|---------|
+| 1 | **Palak Verma** | PhD Researcher | Department of Computer Science and Engineering, IIT Jammu, J&K, 181221, India | palak.verma@iitjammu.ac.in |
+| 2 | **Kishan Kushavaha** | MTech Researcher | Department of Computer Science and Engineering, IIT Jammu, J&K, 181221, India | 2024pcs0029@iitjammu.ac.in |
+| 3 | **Harkeerat Kaur** | Assistant Professor | Department of Computer Science and Engineering, IIT Jammu, J&K, 181221, India | harkeerat.kaur@iitjammu.ac.in |
+| 4 | **Isao Echizen** | Professor | Information and Society Research Division, National Institute of Informatics (NII), Tokyo, Japan | — |
+
+---
+
 ## 📌 Table of Contents
 
+- [Authors & Affiliations](#-authors--affiliations)
 - [Overview](#-overview)
+- [Audio Samples](#-audio-samples)
 - [Architecture](#-architecture)
 - [Neural Prosody Modules](#-neural-prosody-modules)
 - [Post-Processing Pipeline](#-post-processing-pipeline)
@@ -32,7 +47,7 @@
 
 ## 🧠 Overview
 
- Speak Like Me is a research-grade, production-ready S2ST system that grafts **four trainable neural prosody modules** onto a frozen XTTSv2 backbone. The architecture preserves XTTSv2's strong voice cloning capability while adding expressive prosody control, timbre transfer via FreeVC, and a multi-stage self-supervised training curriculum.
+Speak Like Me is a research-grade, production-ready S2ST system that grafts **four trainable neural prosody modules** onto a frozen XTTSv2 backbone. The architecture preserves XTTSv2's strong voice cloning capability while adding expressive prosody control, timbre transfer via FreeVC, and a multi-stage self-supervised training curriculum.
 
 **Key capabilities:**
 
@@ -42,6 +57,34 @@
 - 🎨 **FreeVC timbre transfer** — d-freevc.pth + wavlm-base.pt timbre refinement
 - 📊 **Research-grade evaluation** — BLEU-1/2/3/4, Overall BLEU, chrF, COMET-22, cosine similarity, MCD, emotion accuracy
 - 🌐 **Multilingual** — 16 languages via XTTSv2 + Whisper large-v3 translation
+
+---
+
+## 🎧 Audio Samples
+
+> Click any 🔊 link to listen directly in your browser. Files open as raw audio — no download required.
+
+### Reference Voice Clips (`testaudio/refrence/`)
+
+These are the original speaker reference recordings used for voice cloning.
+
+| # | Sample | Description |
+|---|--------|-------------|
+| 1 | [🔊 Reference Sample 1](testaudio/refrence/sample_1.wav) | Speaker reference — clip 1 |
+| 2 | [🔊 Reference Sample 2](testaudio/refrence/sample_2.wav) | Speaker reference — clip 2 |
+| 3 | [🔊 Reference Sample 3](testaudio/refrence/sample_3.wav) | Speaker reference — clip 3 |
+
+### Translated Output Clips (`testaudio/translated/`)
+
+These are the synthesised outputs after Hindi → English speech-to-speech translation with voice cloning applied.
+
+| # | Sample | Description |
+|---|--------|-------------|
+| 1 | [🔊 Translated Sample 1](testaudio/translated/sample_1.wav) | S2ST output — clip 1 |
+| 2 | [🔊 Translated Sample 2](testaudio/translated/sample_2.wav) | S2ST output — clip 2 |
+| 3 | [🔊 Translated Sample 3](testaudio/translated/sample_3.wav) | S2ST output — clip 3 |
+
+> **Note:** Replace the filenames above with the actual filenames present in each folder. GitHub renders raw `.wav` and `.mp3` files natively — users can click and play without downloading.
 
 ---
 
@@ -112,7 +155,7 @@ Applies Adaptive Instance Normalisation to transfer prosodic style characteristi
 | **Stage 2** | + F0InjectionLayer | F0 contour matching |
 | **Stage 3** | + AdaINStyleLayer | Full style transfer (end-to-end) |
 
-Training datasets:**RAVDESS**, **LibriTTS train-clean-360**  
+Training datasets: **RAVDESS**, **LibriTTS train-clean-360**  
 Optimiser: AdamW + OneCycleLR · Mixed precision via AMP GradScaler
 
 ---
@@ -204,7 +247,7 @@ Dataset: **RAVDESS** + **CREMA-D** (speaker-disjoint split)
 
 ```bash
 git clone https://github.com/kishan8354/Speak-like-me
-cd  Speak Like Me
+cd "Speak Like Me"
 
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install TTS openai-whisper streamlit pydub librosa soundfile noisereduce resemblyzer
@@ -274,6 +317,9 @@ Run any of the three evaluation modules from the **Results & Metrics** tab. Each
 ```
 Speak Like Me/
 ├── app.py                          # Main Streamlit application
+├── testaudio/
+│   ├── refrence/                   # Original speaker reference recordings
+│   └── translated/                 # Hindi → English S2ST output clips
 ├── models/
 │   └── large-v3.pt                 # Whisper weights
 ├── neural_vocoders/
